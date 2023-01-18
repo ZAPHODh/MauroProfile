@@ -1,9 +1,16 @@
 export const theme = {
   colors: {
-    primaryColor: '#0A1128',
-    secondaryColor: '#dc143c',
+    primaryColor: '#dc143c',
+    secondaryColor: '#0A1128',
     white: '#FFFFFF',
     mediumGray: '#DDDDDD',
+    palette: {
+      darker: '#1C1C1C',
+      gray: '#3B3B3B',
+      bright: '#FFE002',
+      darkerBright: '#FFB606',
+      smokyBright: '#B28228',
+    },
   },
   font: {
     family: {
@@ -41,4 +48,11 @@ export const blackTheme = {
   secondaryColor: '#dc143c',
   white: '#FFFFFF',
   mediumGray: '#DDDDDD',
+  palette: {
+    darker: '#1C1C1C',
+    gray: '#3B3B3B',
+    bright: '#FFE002',
+    darkerBright: '#FFB606',
+    smokyBright: '#B28228',
+  },
 };

@@ -1,7 +1,7 @@
-import { Heading } from 'components/Heading';
+import { MapContent } from 'components/Map';
 
 function Home() {
-  return <Heading>Example</Heading>;
+  return <MapContent></MapContent>;
 }
 
 export default Home;

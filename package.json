@@ -19,11 +19,19 @@
     "postinstall": "npm run prepare"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.5",
     "@styled-icons/material-outlined": "latest",
+    "leaflet": "^1.9.3",
     "next": "latest",
+    "ol": "^7.2.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-leaflet": "^4.2.0",
     "react-markdown": "latest",
+    "react-swipeable": "^7.0.0",
     "storybook-addon-next": "latest",
     "styled-components": "latest"
   },
