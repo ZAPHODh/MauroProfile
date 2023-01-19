@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
-    primaryColor: '#dc143c',
-    secondaryColor: '#0A1128',
+    primaryColor: '#FFFFFF',
+    secondaryColor: '#1C1C1C',
     white: '#FFFFFF',
     mediumGray: '#DDDDDD',
     palette: {
@@ -44,8 +44,8 @@ export const theme = {
 };
 
 export const blackTheme = {
-  primaryColor: '#0A1128',
-  secondaryColor: '#dc143c',
+  primaryColor: '#1C1C1C',
+  secondaryColor: '#FFFFFF',
   white: '#FFFFFF',
   mediumGray: '#DDDDDD',
   palette: {
