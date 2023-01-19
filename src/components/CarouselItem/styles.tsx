@@ -7,7 +7,7 @@ export const Wrapper = styled.section<{ bgColor: string }>`
   justify-content: center;
   color:${theme.colors.primaryColor};
   background-color: ${bgColor};
-  width: 100%;
+  width: 100vw;
   height: 400px;
   margin: 0;
   @media ${theme.media.lteMedium} {
@@ -27,6 +27,7 @@ export const ProductContainer = styled.div`
 `;
 export const OfferImage = styled.img`
   ${() => css`
+  width: 100%;
   height: 400px;
   `}
 `;

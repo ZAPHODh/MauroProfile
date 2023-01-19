@@ -4,8 +4,10 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
   width: 60vw;
   height: 450px;
+  border: 3px solid #FFB606;
   border-radius: 10px;
   position: relative;
+
   @media ${theme.media.lteMedium} {
     width: 100%;
   }
@@ -39,9 +41,11 @@ export const Address = styled.div`
 
 export const Container = styled.section`
   ${() => css`
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #1C1C1C;
   `}
 `;

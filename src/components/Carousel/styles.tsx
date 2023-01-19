@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const CarouselContainer = styled.section`
   position: relative;
-   width: 100%;
-  height: 320px;
+  width: 100%;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,9 +16,7 @@ ${({ theme, active }) => css`width: 10px;
   border-radius: 50%;
   margin: 0 5px;
   border: ${theme.colors.primaryColor} 1px solid;
-  background-color: ${
-    active ? `${theme.colors.secondaryColor}` : `${theme.colors.primaryColor}`
-  };
+  background-color: ${active ? `#FFB606` : `${theme.colors.primaryColor}`};
   cursor: pointer;
 `}`;
 
@@ -42,12 +40,12 @@ export const NextAndPrevContainer = styled.div`
 `;
 
 export const ArrowBTN = styled.button`
-${({ theme }) => css`
+${() => css`
   background-color: transparent;
   border: none;
   outline: none;
   font-size: 32px;
-  color:${theme.colors.primaryColor};
+  color:#FFB606;
   &:hover{
     cursor: pointer;
   }
