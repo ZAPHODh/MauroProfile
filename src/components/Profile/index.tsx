@@ -1,3 +1,4 @@
+import { Heading } from 'components/Heading';
 import { SocialMedia } from 'components/SocialMedia';
 import * as Styled from './styles';
 
@@ -15,6 +16,7 @@ export const Profile = ({
   return (
     <Styled.Wrapper>
       <Styled.ProfilePic src={profile} alt={alt} imgWidth={imgWidth} />
+      <Heading>Mauro Chrisostimo</Heading>
       <SocialMedia />
     </Styled.Wrapper>
   );
