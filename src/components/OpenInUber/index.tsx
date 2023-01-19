@@ -13,8 +13,13 @@ export const OpenInUber = ({
 }: OpenInUberProps) => {
   const openUber = () => {
     const destination = { lat, lng };
-    const url = `uber://?action=setPickup&pickup=my_location&dropoff[latitude]=${destination.lat}&dropoff[longitude]=${destination.lng}`;
-    window.location.href = url;
+    const appUrl = `uber://?action=setPickup&pickup=my_location&dropoff[latitude]=${destination.lat}&dropoff[longitude]=${destination.lng}`;
+    const webUrl = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${destination.lat}&dropoff[longitude]=${destination.lng}`;
+    if (navigator.userAgent.match(/Uber/i)) {
+      window.location.href = appUrl;
+    } else {
+      window.location.href = webUrl;
+    }
   };
   return (
     <Styled.Wrapper onClick={openUber}>
