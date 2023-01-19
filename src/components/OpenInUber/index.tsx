@@ -13,7 +13,7 @@ export const OpenInUber = ({
 }: OpenInUberProps) => {
   const openUber = () => {
     const destination = { lat, lng };
-    const url = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${destination.lat}&dropoff[longitude]=${destination.lng}`;
+    const url = `uber://?action=setPickup&pickup=my_location&dropoff[latitude]=${destination.lat}&dropoff[longitude]=${destination.lng}`;
     window.location.href = url;
   };
   return (
