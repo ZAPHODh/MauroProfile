@@ -49,13 +49,12 @@ export const MapContent = ({
     };
   }, [center, zoom]);
   return (
-    <>
-      <Styled.Wrapper ref={mapRef}>
-        <Styled.Indicator id="indicator" onClick={(e) => e.stopPropagation()}>
-          <PlaceIcon fontSize="inherit" />
-        </Styled.Indicator>
-      </Styled.Wrapper>
+    <Styled.Wrapper ref={mapRef}>
+      {/* <div>adress</div> */}
+      <Styled.Indicator id="indicator" onClick={(e) => e.stopPropagation()}>
+        <PlaceIcon fontSize="inherit" />
+      </Styled.Indicator>
       <OpenInUber />
-    </>
+    </Styled.Wrapper>
   );
 };

@@ -1,25 +1,15 @@
-import { Heading } from 'components/Heading';
 import * as Styled from './styles';
 
 export type CarouselItemProps = {
-  title: string;
-  description: string;
-  price: string;
-  thumbnail: string;
+  offer: string;
+  bgColor: string;
 };
 
-export const CarouselItem = ({
-  title,
-  description,
-  price,
-}: CarouselItemProps) => {
+export const CarouselItem = ({ offer, bgColor }: CarouselItemProps) => {
   return (
-    <Styled.Wrapper>
+    <Styled.Wrapper bgColor={bgColor}>
       <Styled.ProductContainer>
-        <Heading as="h2">{title}</Heading>
-        <Styled.DivisorTitleAndDescription />
-        <p>{description}</p>
-        <Styled.Price> $ {price},00</Styled.Price>
+        <Styled.OfferImage src={offer} alt="" />
       </Styled.ProductContainer>
     </Styled.Wrapper>
   );
