@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.button`
-  ${() => css`
+  ${({ theme }) => css`
+  color: ${theme.colors.primaryColor};
   position: absolute;
   top:0;
   z-index: 1;
   background-color:#FFB606 ;
-  color:#1C1C1C;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +16,7 @@ export const Wrapper = styled.button`
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   &:hover{
     cursor: pointer;
-    text-decoration: underline;
+    background-color: #B28228;
   }
   `}
 `;
