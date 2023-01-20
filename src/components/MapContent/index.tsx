@@ -53,7 +53,8 @@ export const MapContent = ({
     };
   }, [center, zoom]);
 
-  const handleShowMap = (): void => {
+  const handleShowMap = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.currentTarget.blur();
     setShouldShowMap((bool) => !bool);
   };
 
