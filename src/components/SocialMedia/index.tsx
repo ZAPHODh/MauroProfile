@@ -18,11 +18,11 @@ export const SocialMedia = ({
   socialMedia = [
     {
       socialMedia: 'Instagram',
-      link: 'https://instagram.com/maurochrisostimo_?igshid=Yzg5MTU1MDY=',
+      link: 'instagram://instagram.com/maurochrisostimo_?igshid=Yzg5MTU1MDY=',
     },
     {
       socialMedia: 'Facebook',
-      link: 'https://www.facebook.com/mauro.chrisostimo.7?mibextid=ZbWKwL',
+      link: 'facebook://www.facebook.com/mauro.chrisostimo.7?mibextid=ZbWKwL',
     },
   ],
 }: SocialMediaProps) => {
@@ -39,13 +39,13 @@ export const SocialMedia = ({
       return <LinkedInIcon fontSize="inherit" />;
     return <></>;
   };
-  const openSocialMediaApp = async (link: string) => {
-    if (navigator.canShare && navigator.canShare({ text: link })) {
-      await navigator.share({ text: link });
-    } else {
-      window.open(link, '_blank');
-    }
-  };
+  // const openSocialMediaApp = async (link: string) => {
+  //   if (navigator.canShare && navigator.canShare({ text: link })) {
+  //     await navigator.share({ text: link });
+  //   } else {
+  //     window.open(link, '_blank');
+  //   }
+  // };
   return (
     <Styled.Wrapper>
       {socialMedia.map((media) => {
@@ -55,7 +55,7 @@ export const SocialMedia = ({
             target="_blank"
             rel="noreferrer"
             key={media.socialMedia}
-            onClick={() => openSocialMediaApp(media.link)}
+            // onClick={() => openSocialMediaApp(media.link)}
           >
             <FindMedia socialMedia={media.socialMedia} />
           </Styled.Link>
