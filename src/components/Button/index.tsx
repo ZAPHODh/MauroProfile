@@ -6,5 +6,9 @@ export type ButtonProps = {
 };
 
 export const Button = ({ children, onClick }: ButtonProps) => {
-  return <Styled.Wrapper onClick={onClick}>{children}</Styled.Wrapper>;
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.currentTarget.blur();
+    onClick();
+  };
+  return <Styled.Wrapper onClick={handleClick}>{children}</Styled.Wrapper>;
 };

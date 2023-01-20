@@ -39,7 +39,13 @@ export const SocialMedia = ({
       return <LinkedInIcon fontSize="inherit" />;
     return <></>;
   };
-
+  const openSocialMediaApp = async (link: string) => {
+    if (navigator.canShare && navigator.canShare({ text: link })) {
+      await navigator.share({ text: link });
+    } else {
+      window.open(link, '_blank');
+    }
+  };
   return (
     <Styled.Wrapper>
       {socialMedia.map((media) => {
@@ -49,6 +55,7 @@ export const SocialMedia = ({
             target="_blank"
             rel="noreferrer"
             key={media.socialMedia}
+            onClick={() => openSocialMediaApp(media.link)}
           >
             <FindMedia socialMedia={media.socialMedia} />
           </Styled.Link>
