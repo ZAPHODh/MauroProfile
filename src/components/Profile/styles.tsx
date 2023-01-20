@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   >${Title}{
     color:#FFB606;
+    margin: 5px;
   }
   `}
 `;

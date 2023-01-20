@@ -2,11 +2,19 @@ import { CarouselItemProps } from 'components/CarouselItem';
 
 export const carouselData: CarouselItemProps[] = [
   {
-    offer: 'https://i.ibb.co/DQHMtwZ/2353e213-f5d3-4ed7-b2c3-41003f4e312e.jpg',
-    bgColor: '#1C1C1C',
+    title: 'CURSO PRÁTICO',
+    subtitle: 'by Mauro Chrisostimo',
+    img: 'https://i.ibb.co/pxRPVkC/curso.jpg',
+    endDate: '06 Fev',
+    endDateToCalc: '06-02-2023',
+    endMessage: 'Começa em...',
   },
   {
-    offer: 'https://i.ibb.co/BqDpFYn/dc244309-f3fb-446d-bb44-5b26f22d68db.jpg',
-    bgColor: '#1C1C1C',
+    title: 'MECHAS MORENA ILUMINADA',
+    subtitle: 'Chocolate / Avelã / Café',
+    img: 'https://i.ibb.co/GTnVyxM/unnamed.jpg',
+    endDate: 'R$ 449,00',
+    endDateToCalc: '31-01-2023',
+    endMessage: 'Válido por...',
   },
 ];

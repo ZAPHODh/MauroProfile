@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const CarouselContainer = styled.section`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -4,6 +4,7 @@ import { MapContent } from 'components/MapContent';
 import { Profile } from 'components/Profile';
 import * as Styled from './styles';
 import { carouselData } from '../../config/carouselData';
+import { Schedule } from 'components/Schedule';
 function Home() {
   return (
     <Styled.Wrapper>
@@ -12,12 +13,17 @@ function Home() {
       <Carousel>
         {carouselData.map((data) => (
           <CarouselItem
-            bgColor={data.bgColor}
-            offer={data.offer}
-            key={data.offer}
+            endDate={data.endDate}
+            endDateToCalc={data.endDateToCalc}
+            endMessage={data.endMessage}
+            img={data.img}
+            subtitle={data.subtitle}
+            title={data.title}
+            key={Math.random()}
           />
         ))}
       </Carousel>
+      <Schedule />
       {/* <Styled.Divisor /> */}
       <MapContent />
     </Styled.Wrapper>
