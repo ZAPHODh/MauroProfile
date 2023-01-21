@@ -53,7 +53,6 @@ export const Carousel = ({
         </Styled.ArrowBTN>
       </Styled.NextAndPrevContainer>
       {children[currentSlide]}
-
       <Styled.IndicatorContainer>
         {children.map((child, index) => (
           <Styled.Indicator

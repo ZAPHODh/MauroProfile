@@ -7,9 +7,10 @@ import { useEffect, useRef, useState } from 'react';
 import { fromLonLat } from 'ol/proj';
 import Overlay from 'ol/Overlay';
 import PlaceIcon from '@mui/icons-material/Place';
-import { OpenInUber } from 'components/OpenInUber';
 import { Button } from 'components/Button';
 import MapIcon from '@mui/icons-material/Map';
+import { OpenInApp } from 'components/OpenInApp';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 export type MapContentProps = {
   center?: [number, number];
   zoom?: number;
@@ -66,11 +67,22 @@ export const MapContent = ({
       </Button>
       {shouldShowMap ? (
         <Styled.Wrapper ref={mapRef}>
-          <Styled.Address>{address}</Styled.Address>
+          <Styled.Address
+            onClick={() => {
+              navigator.clipboard.writeText(address);
+            }}
+          >
+            <ContentCopyIcon fontSize="inherit" />
+            {address}
+          </Styled.Address>
           <Styled.Indicator id="indicator" onClick={(e) => e.stopPropagation()}>
             <PlaceIcon fontSize="inherit" />
           </Styled.Indicator>
-          <OpenInUber />
+          <Styled.ButtonContainer>
+            <OpenInApp app="Uber" title="Abrir no Uber" />
+            <OpenInApp app="Waze" title="Abrir no Waze" />
+            <OpenInApp app="99" title="Abrir no 99" />
+          </Styled.ButtonContainer>
         </Styled.Wrapper>
       ) : null}
     </Styled.Container>

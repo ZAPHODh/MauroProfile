@@ -21,6 +21,7 @@ export const Wrapper = styled.button`
     }
     @media ${theme.media.lteMedium} {
       width: 80%;
+      background-color: #FFB606;
     }
   `}
 `;

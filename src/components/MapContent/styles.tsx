@@ -36,6 +36,14 @@ export const Address = styled.div`
   padding: 5px;
   border-radius: 0 5px 0 5px;
   font-size: 20px;
+  &:hover{
+    cursor: pointer;
+    background-color: #B28228;
+    @media ${theme.media.lteMedium} {
+      background-color: #FFB606;
+    }
+
+  }
   `}
 `;
 
@@ -48,4 +56,11 @@ export const Container = styled.section`
     flex-direction: column;
     background-color: #1C1C1C;
   `}
+`;
+export const ButtonContainer = styled.div`
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: -0.1rem;
+  width: 250px;
 `;
