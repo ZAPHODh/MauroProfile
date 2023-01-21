@@ -5,7 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { mediaApp } from 'customHooks/mediaApp';
+import useScreenWidth from 'customHooks/useScreenWidth';
 export type SocialMediaType = {
   socialMedia?: 'LinkedIn' | 'Facebook' | 'Instagram' | 'Youtube' | 'Twitter';
   webLink?: string;
@@ -45,14 +45,14 @@ export const SocialMedia = ({
       return <LinkedInIcon fontSize="inherit" />;
     return <></>;
   };
+  const width = useScreenWidth();
 
   return (
     <Styled.Wrapper>
       {socialMedia.map((media) => {
-        const hasMediaApp = mediaApp(media.socialMedia);
         return (
           <Styled.Link
-            href={hasMediaApp ? media.appLink : media.webLink}
+            href={width <= 728 ? media.appLink : media.webLink}
             target="_blank"
             rel="noreferrer"
             key={media.socialMedia}

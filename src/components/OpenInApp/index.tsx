@@ -2,6 +2,7 @@ import * as Styled from './styles';
 import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
+import useScreenWidth from 'customHooks/useScreenWidth';
 export type AppType = 'Uber' | '99' | 'Waze';
 export type OpenInAppProps = {
   title: string;
@@ -16,13 +17,12 @@ export const OpenInApp = ({
   lat = -22.759582085683657,
   lng = -43.45494480389828,
 }: OpenInAppProps) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+  const width = useScreenWidth();
   const toApp = (app: AppType) => {
     if (app === 'Uber') {
       const appUrl = `uber://?action=setPickup&pickup=my_location&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
       const webUrl = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
-      if (navigator.userAgent.match(/Uber/i)) {
+      if (width <= 728) {
         window.location.href = appUrl;
         return;
       } else {
@@ -33,7 +33,7 @@ export const OpenInApp = ({
     if (app === '99') {
       const appUrl = `99://app.99.co?destination=${lat},${lng}`;
 
-      if (navigator.userAgent.match(/99/i)) {
+      if (width <= 728) {
         window.location.href = appUrl;
         return;
       }
@@ -41,9 +41,9 @@ export const OpenInApp = ({
       return;
     }
     if (app === 'Waze') {
-      const appUrl = `waze://?ll=${lat},${lng}`;
+      const appUrl = `https://waze.com/ul?q=66%20Acacia%20Avenue&ll=${lat},${lng}&navigate=yes`;
 
-      if (navigator.userAgent.match(/Waze/i)) {
+      if (width <= 728) {
         window.location.href = appUrl;
         return;
       }
