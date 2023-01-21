@@ -32,25 +32,23 @@ export const OpenInApp = ({
     }
     if (app === '99') {
       const appUrl = `99://app.99.co?destination=${lat},${lng}`;
-      const webUrl = `https://app.99.co?destination=${lat},${lng}`;
+
       if (navigator.userAgent.match(/99/i)) {
         window.location.href = appUrl;
         return;
-      } else {
-        window.location.href = webUrl;
-        return;
       }
+      alert('Não foi encontrado o app no seu dispositivo');
+      return;
     }
     if (app === 'Waze') {
       const appUrl = `waze://?ll=${lat},${lng}`;
-      const webUrl = `https://waze.com/ul?ll=${lat},${lng}`;
+
       if (navigator.userAgent.match(/Waze/i)) {
         window.location.href = appUrl;
         return;
-      } else {
-        window.location.href = webUrl;
-        return;
       }
+      alert('Não foi encontrado o app no seu dispositivo');
+      return;
     }
   };
   return (
