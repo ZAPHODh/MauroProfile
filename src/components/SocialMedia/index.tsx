@@ -5,9 +5,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { mediaApp } from 'customHooks/mediaApp';
 export type SocialMediaType = {
   socialMedia?: 'LinkedIn' | 'Facebook' | 'Instagram' | 'Youtube' | 'Twitter';
-  link?: string;
+  webLink?: string;
+  appLink?: string;
 };
 
 export type SocialMediaProps = {
@@ -18,11 +20,15 @@ export const SocialMedia = ({
   socialMedia = [
     {
       socialMedia: 'Instagram',
-      link: 'instagram://instagram.com/maurochrisostimo_?igshid=Yzg5MTU1MDY=',
+      appLink:
+        'instagram://instagram.com/maurochrisostimo_?igshid=Yzg5MTU1MDY=',
+      webLink: 'https://instagram.com/maurochrisostimo_?igshid=Yzg5MTU1MDY=',
     },
     {
       socialMedia: 'Facebook',
-      link: 'facebook://www.facebook.com/mauro.chrisostimo.7?mibextid=ZbWKwL',
+      appLink:
+        'facebook://www.facebook.com/mauro.chrisostimo.7?mibextid=ZbWKwL',
+      webLink: 'https://www.facebook.com/mauro.chrisostimo.7?mibextid=ZbWKwL',
     },
   ],
 }: SocialMediaProps) => {
@@ -39,23 +45,17 @@ export const SocialMedia = ({
       return <LinkedInIcon fontSize="inherit" />;
     return <></>;
   };
-  // const openSocialMediaApp = async (link: string) => {
-  //   if (navigator.canShare && navigator.canShare({ text: link })) {
-  //     await navigator.share({ text: link });
-  //   } else {
-  //     window.open(link, '_blank');
-  //   }
-  // };
+
   return (
     <Styled.Wrapper>
       {socialMedia.map((media) => {
+        const hasMediaApp = mediaApp(media.socialMedia);
         return (
           <Styled.Link
-            href={media.link}
+            href={hasMediaApp ? media.appLink : media.webLink}
             target="_blank"
             rel="noreferrer"
             key={media.socialMedia}
-            // onClick={() => openSocialMediaApp(media.link)}
           >
             <FindMedia socialMedia={media.socialMedia} />
           </Styled.Link>
