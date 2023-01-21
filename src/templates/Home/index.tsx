@@ -8,8 +8,7 @@ import { Schedule } from 'components/Schedule';
 function Home() {
   return (
     <Styled.Wrapper>
-      {/* <Profile /> */}
-
+      <Profile />
       <Carousel>
         {carouselData.map((data) => (
           <CarouselItem
