@@ -12,8 +12,3 @@ export const Wrapper = styled.div`
     min-width: 0;
   `}
 `;
-export const Divisor = styled.hr`
-    border-color: #FFB606;
-    width: 60%;
-    margin: 20px;
-`;
