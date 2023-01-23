@@ -33,7 +33,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <link rel="icon" href="../../public/assets/images/maurologohd.png" />
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
             rel="stylesheet"
