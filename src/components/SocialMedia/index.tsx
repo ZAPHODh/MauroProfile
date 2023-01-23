@@ -14,6 +14,7 @@ export type SocialMediaType = {
 
 export type SocialMediaProps = {
   socialMedia?: SocialMediaType[];
+  id?: string;
 };
 
 export const SocialMedia = ({
@@ -31,6 +32,7 @@ export const SocialMedia = ({
       webLink: 'https://www.facebook.com/mauro.chrisostimo.7?mibextid=ZbWKwL',
     },
   ],
+  id = 'socialMedia',
 }: SocialMediaProps) => {
   const FindMedia = (media: SocialMediaType): JSX.Element => {
     if (media.socialMedia === 'Facebook')
@@ -48,7 +50,7 @@ export const SocialMedia = ({
   const width = useScreenWidth();
 
   return (
-    <Styled.Wrapper>
+    <Styled.Wrapper id={id}>
       {socialMedia.map((media) => {
         return (
           <Styled.Link

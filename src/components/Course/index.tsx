@@ -9,12 +9,14 @@ export type CourseProps = {
   course?: string;
   description?: string;
   finalConsider?: string;
+  id?: string;
 };
 
 export const Course = ({
   course = 'Curso Prático',
   description = 'Mauro Chrisostimo, que hoje é uma referência quando o assunto é iluminado, estará mostrando TUDO. Todas as técnicas, desde a avaliação até a finalização, todas serão postas em prática nesse evento seleto para PROFISSIONAIS.',
   finalConsider = 'No momento, o curso ja está com a lotação maxima',
+  id = 'Course',
 }: CourseProps) => {
   const [show, setShow] = useState(false);
 
@@ -23,7 +25,7 @@ export const Course = ({
     console.log(show);
   };
   return (
-    <Styled.Wrapper>
+    <Styled.Wrapper id={id}>
       <Button onClick={handleClick}>
         Curso
         {show ? (

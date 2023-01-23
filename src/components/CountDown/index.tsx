@@ -5,15 +5,17 @@ import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 export type CountDownProps = {
   endDate: string;
   endMessage?: string;
+  id?: string;
 };
 
 export const CountDown = ({
   endDate = '24-01-2023',
   endMessage = 'Termina em...',
+  id = 'countDown',
 }: CountDownProps) => {
   const countdown = useCountdown(endDate);
   return (
-    <Styled.Wrapper>
+    <Styled.Wrapper id={id}>
       <Styled.Clock>
         <AccessAlarmIcon fontSize="inherit" />
       </Styled.Clock>

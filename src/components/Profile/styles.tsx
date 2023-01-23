@@ -1,7 +1,7 @@
 import { Title } from 'components/Heading/styles';
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   ${() => css`
   display: flex;
   flex-direction: column;
