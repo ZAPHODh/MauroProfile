@@ -1,5 +1,5 @@
 import { Button } from 'components/Button';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import * as Styled from './styles';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
@@ -18,14 +18,16 @@ export const Course = ({
   finalConsider = 'No momento, o curso ja está com a lotação maxima',
   id = 'Course',
 }: CourseProps) => {
+  const courseRef = useRef<HTMLDivElement>();
   const [show, setShow] = useState(false);
 
   const handleClick = () => {
     setShow((show) => !show);
-    console.log(show);
+    courseRef.current.focus();
+    return;
   };
   return (
-    <Styled.Wrapper id={id}>
+    <Styled.Wrapper id={id} ref={courseRef}>
       <Button onClick={handleClick}>
         Curso
         {show ? (
