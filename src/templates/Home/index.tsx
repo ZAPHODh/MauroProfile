@@ -5,6 +5,7 @@ import { Profile } from 'components/Profile';
 import * as Styled from './styles';
 import { carouselData } from '../../config/carouselData';
 import { Schedule } from 'components/Schedule';
+import { Course } from 'components/Course';
 function Home() {
   return (
     <Styled.Wrapper>
@@ -23,6 +24,7 @@ function Home() {
         ))}
       </Carousel>
       <Schedule />
+      <Course />
       <MapContent />
     </Styled.Wrapper>
   );
