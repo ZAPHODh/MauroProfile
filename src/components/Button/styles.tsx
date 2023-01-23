@@ -17,11 +17,10 @@ export const Wrapper = styled.button`
     margin:15px ;
     &:hover{
       cursor: pointer;
-      background-color:#B28228 ;
     }
     @media ${theme.media.lteMedium} {
       width: 80%;
-      background-color: #FFB606;
+
     }
   `}
 `;

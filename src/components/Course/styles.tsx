@@ -29,3 +29,18 @@ export const CourseContent = styled.div<{ show: boolean }>`
   }
 `}
 `;
+export const KnowMore = styled.a`
+  ${() => css`
+  padding: 10px;
+  width: 100%;
+  background-color: #FFB606;
+  color: white;
+  border-radius: 5px ;
+  margin-top: 20px;
+  display: flex;
+  align-items:center;
+  &:hover{
+    cursor: pointer;
+  }
+`}
+`;
