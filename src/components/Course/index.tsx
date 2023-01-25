@@ -27,7 +27,7 @@ export const Course = ({
     return;
   };
   return (
-    <Styled.Wrapper id={id} ref={courseRef} tabIndex={-1}>
+    <Styled.Wrapper id={id} ref={courseRef} >
       <Button onClick={handleClick}>
         Curso
         {show ? (
