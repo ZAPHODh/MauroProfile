@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   ${() => css`
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   width: 100%;
   `}
 `;
-export const CourseContent = styled.section<{ show: boolean }>`
+export const CourseContent = styled.div<{ show: boolean }>`
   ${({ theme, show }) => css`
   max-height:${show ? '100%' : '0'};
   transition: max-height 3s ease-in-out;

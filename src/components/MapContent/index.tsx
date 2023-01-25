@@ -53,6 +53,11 @@ export const MapContent = ({
       map.removeOverlay(indicatorOverlay);
     };
   }, [center, zoom]);
+  useEffect(() => {
+    if (shouldShowMap && mapRef.current) {
+      mapRef.current.focus();
+    }
+  }, [shouldShowMap]);
 
   const handleShowMap = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.currentTarget.blur();
@@ -66,7 +71,7 @@ export const MapContent = ({
         <MapIcon fontSize="inherit" />
       </Button>
       {shouldShowMap ? (
-        <Styled.Wrapper ref={mapRef}>
+        <Styled.Wrapper ref={mapRef} tabIndex={0}>
           <Styled.Address
             onClick={() => {
               navigator.clipboard.writeText(address);

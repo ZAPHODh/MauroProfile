@@ -1,5 +1,5 @@
 import { Button } from 'components/Button';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import * as Styled from './styles';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
@@ -21,13 +21,19 @@ export const Course = ({
   const courseRef = useRef<HTMLDivElement>();
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    if (show && courseRef.current) {
+      courseRef.current.focus();
+    }
+  }, [show]);
+
   const handleClick = () => {
     setShow((show) => !show);
-    courseRef.current.focus();
+
     return;
   };
   return (
-    <Styled.Wrapper id={id} ref={courseRef}>
+    <Styled.Wrapper id={id}>
       <Button onClick={handleClick}>
         Curso
         {show ? (
@@ -36,7 +42,7 @@ export const Course = ({
           <ArrowDropDownIcon fontSize="inherit" />
         )}
       </Button>
-      <Styled.CourseContent show={show}>
+      <Styled.CourseContent show={show} ref={courseRef} tabIndex={0}>
         <Heading as="h3">{course}</Heading>
         {description}
         <br />
