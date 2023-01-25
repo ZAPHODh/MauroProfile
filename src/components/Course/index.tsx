@@ -29,9 +29,9 @@ export const Course = ({
 
   const handleClick = () => {
     setShow((show) => !show);
-
     return;
   };
+
   return (
     <Styled.Wrapper id={id}>
       <Button onClick={handleClick}>
