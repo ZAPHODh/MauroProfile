@@ -86,7 +86,7 @@ export const MapContent = ({
           <Styled.ButtonContainer>
             <OpenInApp app="Uber" title="Abrir no Uber" />
             <OpenInApp app="Waze" title="Abrir no Waze" />
-            <OpenInApp app="99" title="Abrir no 99" />
+            {/* <OpenInApp app="99" title="Abrir no 99" /> */}
           </Styled.ButtonContainer>
         </Styled.Wrapper>
       ) : null}
