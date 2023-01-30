@@ -52,7 +52,11 @@ export const Carousel = ({
           <KeyboardArrowRightIcon fontSize="inherit" />
         </Styled.ArrowBTN>
       </Styled.NextAndPrevContainer>
-      {children[currentSlide]}
+      <Styled.Wrapper>
+        <Styled.ProductContainer>
+          {children[currentSlide]}
+        </Styled.ProductContainer>
+      </Styled.Wrapper>
       <Styled.IndicatorContainer>
         {children.map((child, index) => (
           <Styled.Indicator

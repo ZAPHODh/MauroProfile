@@ -1,5 +1,34 @@
 import styled, { css } from 'styled-components';
+import { Title } from '../Heading/styles';
 
+export const Wrapper = styled.div`
+  ${({ theme }) => css`
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:${theme.colors.primaryColor};
+  background-color: #1C1C1C;
+  width: 100vw;
+  height: 500px;
+  margin: 0;
+  @media ${theme.media.lteMedium} {
+    flex-direction: column;
+  }
+  `}
+`;
+
+export const ProductContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+>${Title}{
+  color:#FFB606;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+`;
 export const CarouselContainer = styled.section`
   position: relative;
   width: 100%;
@@ -26,14 +55,14 @@ justify-content: center;
 align-items: center;
 margin-top: 10px;
 position: absolute;
-bottom: 1.95rem;
+bottom: 3.5rem;
 left: 1rem;
 `;
 
 export const NextAndPrevContainer = styled.div`
   ${({ theme }) => css`
   position: absolute;
-  bottom: 0;
+  bottom: 1.5rem;
   right: 1rem;
   color:${theme.colors.primaryColor};
   `}

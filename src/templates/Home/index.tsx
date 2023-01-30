@@ -3,28 +3,39 @@ import { CarouselItem } from 'components/CarouselItem';
 import { MapContent } from 'components/MapContent';
 import { Profile } from 'components/Profile';
 import * as Styled from './styles';
-import { carouselData } from '../../config/carouselData';
 import { Schedule } from 'components/Schedule';
 import { Course } from 'components/Course';
-function Home() {
+import React, { useEffect, useState } from 'react';
+import { IndexTypeProps } from 'pages';
+function Home({ course, profile, sliders }: IndexTypeProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
   return (
     <Styled.Wrapper>
-      <Profile />
-      <Carousel>
-        {carouselData.map((data) => (
-          <CarouselItem
-            endDate={data.endDate}
-            endDateToCalc={data.endDateToCalc}
-            endMessage={data.endMessage}
-            img={data.img}
-            subtitle={data.subtitle}
-            title={data.title}
-            key={Math.random()}
-          />
-        ))}
-      </Carousel>
+      <Profile imgWidth={profile.imgWidth} profile={profile.profileData} />
+      {isLoaded ? (
+        <Carousel>
+          {sliders.map((data) => (
+            <CarouselItem
+              bottomMessage={data.attributes.bottomMessage}
+              endDateToCalc={data.attributes.endDateToCalc}
+              endMessage={data.attributes.endMessage}
+              img={data.attributes.img.data.attributes.url}
+              subtitle={data.attributes.subtitle}
+              title={data.attributes.title}
+              key={Math.random()}
+            />
+          ))}
+        </Carousel>
+      ) : null}
       <Schedule />
-      <Course />
+      <Course
+        course={course.course}
+        description={course.description}
+        finalConsider={course.finalConsider}
+      />
       <MapContent />
     </Styled.Wrapper>
   );
