@@ -5,6 +5,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Heading } from 'components/Heading';
+import { Description } from 'components/Description';
 export type CourseProps = {
   course?: string;
   description?: string;
@@ -44,10 +45,12 @@ export const Course = ({
       </Button>
       <Styled.CourseContent show={show} ref={courseRef} tabIndex={0}>
         <Heading as="h4">{course}</Heading>
-        {description}
-        <br />
-        <br />
-        {finalConsider}
+        <Description father="curso-pratico" fontSize="14px">
+          {description}
+          <br />
+          <br />
+          {finalConsider}
+        </Description>
         <Styled.KnowMore href="https://api.whatsapp.com/send?phone=5521971083900&text=Olá,%20gostaria%20de%20saber%20mais%sobre%20o%20curso">
           <KeyboardArrowRightIcon fontSize="inherit" />
           Saiba Mais
