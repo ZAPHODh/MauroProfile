@@ -25,7 +25,6 @@ export type IndexTypeProps = {
 };
 
 export default function Index({ sliders, course, profile }: IndexTypeProps) {
-  console.log(course);
   return <Home sliders={sliders} course={course} profile={profile} />;
 }
 

@@ -43,7 +43,7 @@ export const Course = ({
         )}
       </Button>
       <Styled.CourseContent show={show} ref={courseRef} tabIndex={0}>
-        <Heading as="h3">{course}</Heading>
+        <Heading as="h4">{course}</Heading>
         {description}
         <br />
         <br />

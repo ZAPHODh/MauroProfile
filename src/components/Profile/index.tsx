@@ -19,6 +19,7 @@ export const Profile = ({
     <Styled.Wrapper id={id}>
       <Styled.ProfilePic src={profile} alt={alt} imgWidth={imgWidth} />
       <Heading>Mauro Chrisostimo</Heading>
+      <Heading as="h2">Cabeleireiro</Heading>
       <SocialMedia />
     </Styled.Wrapper>
   );

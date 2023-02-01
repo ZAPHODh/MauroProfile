@@ -21,7 +21,7 @@ export const CarouselItem = ({
 }: CarouselItemProps) => {
   return (
     <>
-      <Heading as="h2">{title}</Heading>
+      <Heading as="h3">{title}</Heading>
       <Styled.SubTitle>{subtitle}</Styled.SubTitle>
       <Styled.OfferImage src={img} alt={`${title} pic`} />
       <Styled.EndDate>{bottomMessage}</Styled.EndDate>
