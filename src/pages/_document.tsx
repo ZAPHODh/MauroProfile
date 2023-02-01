@@ -1,3 +1,4 @@
+import { GA } from 'components/GA';
 import Document, {
   Html,
   Head,
@@ -32,6 +33,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-BR">
+        <GA />
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
