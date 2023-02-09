@@ -58,6 +58,7 @@ export const SocialMedia = ({
             target="_blank"
             rel="noreferrer"
             key={media.socialMedia}
+            aria-label={`Abrir ${media.socialMedia}`}
           >
             <FindMedia socialMedia={media.socialMedia} />
           </Styled.Link>

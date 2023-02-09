@@ -29,7 +29,7 @@ export const Profile = ({
       </Styled.ProfilePic>
       <Heading>Mauro Chrisostimo</Heading>
       <Heading as="h2">Cabeleireiro</Heading>
-      <Description father="Social-Media">Midias sociais</Description>
+      <Description father="social-media">Mídias sociais</Description>
       <SocialMedia />
     </Styled.Wrapper>
   );

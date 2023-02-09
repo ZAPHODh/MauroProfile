@@ -45,10 +45,16 @@ export const Carousel = ({
   return (
     <Styled.CarouselContainer id={id} {...swipeableHandler}>
       <Styled.NextAndPrevContainer>
-        <Styled.ArrowBTN onClick={handlePrevClick}>
+        <Styled.ArrowBTN
+          onClick={handlePrevClick}
+          aria-label="Troque para a prévia promoção"
+        >
           <KeyboardArrowLeftIcon fontSize="inherit" />
         </Styled.ArrowBTN>
-        <Styled.ArrowBTN onClick={handleNextClick}>
+        <Styled.ArrowBTN
+          onClick={handleNextClick}
+          aria-label="Troque para a próxima promoção"
+        >
           <KeyboardArrowRightIcon fontSize="inherit" />
         </Styled.ArrowBTN>
       </Styled.NextAndPrevContainer>
