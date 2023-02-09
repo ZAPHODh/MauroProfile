@@ -37,6 +37,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="description"
+            content="Cabeleireiro Mauro Chrisostimo, especialista em mechas moreno iluminado e mega hair. Agendamento e promoções. Local Av doutor Mário Guimarães, 318, Nova Iguaçu - loja 02"
+          />
         </Head>
         <body>
           <Main />

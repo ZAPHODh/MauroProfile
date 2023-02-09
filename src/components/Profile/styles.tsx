@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.header`
   ${() => css`
+  color:#FFB606;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,14 +15,15 @@ export const Wrapper = styled.header`
   `}
 `;
 
-export const ProfilePic = styled.img<{ imgWidth: string }>`
+export const ProfilePic = styled.div<{ imgWidth: number }>`
   ${({ imgWidth }) => css`
-    height: ${imgWidth};
-    width: ${imgWidth};
+    height: ${imgWidth} px;
+    width: ${imgWidth} px;
     border-radius: 50%;
     object-fit: cover;
     overflow: hidden;
     margin-bottom: 20px;
     border: 2px solid #FFB606;
+    overflow: hidden;
  `}
 `;

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.button`
   ${({ theme }) => css`
-    color:white;
+    color:black;
     padding: 10px;
     width: 350px;
     height: 50px;

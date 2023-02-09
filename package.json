@@ -69,7 +69,6 @@
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-storybook": "latest",
-    "husky": "latest",
     "jest-styled-components": "latest",
     "jsdom": "latest",
     "lint-staged": "latest",

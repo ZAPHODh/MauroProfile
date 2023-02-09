@@ -1,7 +1,7 @@
 import { Heading } from 'components/Heading';
 import * as Styled from './styles';
 import { CountDown } from 'components/CountDown';
-
+import Image from 'next/image';
 export type CarouselItemProps = {
   title?: string;
   subtitle?: string;
@@ -23,7 +23,9 @@ export const CarouselItem = ({
     <>
       <Heading as="h3">{title}</Heading>
       <Styled.SubTitle>{subtitle}</Styled.SubTitle>
-      <Styled.OfferImage src={img} alt={`${title} pic`} />
+      <Styled.OfferImage>
+        <Image src={img} alt={`${title} pic`} height="320" width={280} />
+      </Styled.OfferImage>
       <Styled.EndDate>{bottomMessage}</Styled.EndDate>
       <CountDown endDate={endDateToCalc} endMessage={endMessage} />
     </>

@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
 
-export const OfferImage = styled.img`
+export const OfferImage = styled.div`
   ${() => css`
   border-radius: 10px;
   border: 1px solid #FFB606 ;
   height: 320px;
+  overflow: hidden;
   `}
 `;
 export const EndDate = styled.p`

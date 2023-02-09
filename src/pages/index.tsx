@@ -15,7 +15,7 @@ export type courseProp = {
 
 export type profileProp = {
   profileData: string;
-  imgWidth: string;
+  imgWidth: number;
 };
 
 export type IndexTypeProps = {
@@ -41,7 +41,7 @@ export const getStaticProps = async () => {
     'https://mcserver-strapi.herokuapp.com/graphql',
     GET_PROFILE,
   );
-  const imgWidth = profileRaw.perfil.data.attributes.imgWidth;
+  const imgWidth = Number(profileRaw.perfil.data.attributes.imgWidth);
   const profileData =
     profileRaw.perfil.data.attributes.profile.data.attributes.url;
   const profile = { profileData, imgWidth };

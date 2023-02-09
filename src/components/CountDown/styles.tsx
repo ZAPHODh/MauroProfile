@@ -20,7 +20,7 @@ export const Clock = styled.div`
   font-size: 35px;
   border-radius: 5px 0 0 5px;
   background-color:#FFB606;
-  color: white;
+  color: black;
 `;
 
 export const Message = styled.p`
