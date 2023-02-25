@@ -7,7 +7,7 @@ query GET_SLIDERS {
      attributes{
        title:Titulo
        subtitle:Subtitulo
-       description:description
+       description:Descricao
        img{data{attributes{url}}}
        endMessage:MensagemFinalDoContador
        bottomMessage:MensagemDeBaixo
