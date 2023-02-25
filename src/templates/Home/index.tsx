@@ -24,6 +24,7 @@ function Home({ course, profile, sliders }: IndexTypeProps) {
           <Carousel>
             {sliders.map((data) => (
               <CarouselItem
+                description={data.attributes.description}
                 bottomMessage={data.attributes.bottomMessage}
                 endDateToCalc={data.attributes.endDateToCalc}
                 endMessage={data.attributes.endMessage}

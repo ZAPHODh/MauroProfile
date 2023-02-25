@@ -12,7 +12,8 @@ export const Wrapper = styled.div`
 export const Link = styled.a`
   ${() => css`
   font-size: 45px;
-  padding: 3px;
+  padding: 2px;
+  padding-bottom: 0px;
   color:#FFB606;
   &:hover{
     color:#B28228;

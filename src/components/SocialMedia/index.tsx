@@ -6,6 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import useScreenWidth from 'customHooks/useScreenWidth';
+import { Tooltip } from '@mui/material';
 export type SocialMediaType = {
   socialMedia?: 'LinkedIn' | 'Facebook' | 'Instagram' | 'Youtube' | 'Twitter';
   webLink?: string;
@@ -53,15 +54,20 @@ export const SocialMedia = ({
     <Styled.Wrapper id={id}>
       {socialMedia.map((media) => {
         return (
-          <Styled.Link
-            href={width <= 728 ? media.appLink : media.webLink}
-            target="_blank"
-            rel="noreferrer"
+          <Tooltip
+            title={`Abrir ${media.socialMedia}`}
             key={media.socialMedia}
-            aria-label={`Abrir ${media.socialMedia}`}
+            arrow
           >
-            <FindMedia socialMedia={media.socialMedia} />
-          </Styled.Link>
+            <Styled.Link
+              href={width <= 728 ? media.appLink : media.webLink}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Abrir ${media.socialMedia}`}
+            >
+              <FindMedia socialMedia={media.socialMedia} />
+            </Styled.Link>
+          </Tooltip>
         );
       })}
     </Styled.Wrapper>

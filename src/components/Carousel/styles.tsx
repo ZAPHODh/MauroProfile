@@ -9,8 +9,9 @@ export const Wrapper = styled.div`
   color:${theme.colors.primaryColor};
   background-color: #1C1C1C;
   width: 100vw;
-  height: 500px;
+  height: 600px;
   margin: 0;
+  padding: 5px;
   @media ${theme.media.lteMedium} {
     flex-direction: column;
   }
@@ -32,7 +33,7 @@ align-items: center;
 export const CarouselContainer = styled.section`
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;

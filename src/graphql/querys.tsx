@@ -2,18 +2,19 @@ import { gql } from 'graphql-request';
 
 export const GET_SLIDERS = gql`
 query GET_SLIDERS {
-   sliders{
-    data{
-      attributes{
-        title:Titulo
-        subtitle:Subtitulo
-        img{data{attributes{url}}}
-        endMessage:MensagemFinalDoContador
-        bottomMessage:MensagemDeBaixo
-        endDateToCalc:DataFinal
-      }
-    }
-  }
+  sliders{
+   data{
+     attributes{
+       title:Titulo
+       subtitle:Subtitulo
+       description:description
+       img{data{attributes{url}}}
+       endMessage:MensagemFinalDoContador
+       bottomMessage:MensagemDeBaixo
+       endDateToCalc:DataFinal
+     }
+   }
+ }
 }
 `;
 export const GET_PROFILE = gql`

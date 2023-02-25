@@ -32,6 +32,7 @@ export type SliderType = {
         };
       };
     };
+    description: string;
     endMessage: string;
     bottomMessage: string;
     endDateToCalc: string;

@@ -12,7 +12,7 @@ export type ProfileProps = {
 };
 
 export const Profile = ({
-  profile = 'https://pps.whatsapp.net/v/t61.24694-24/322299027_153400430846867_3312810277051212599_n.jpg?ccb=11-4&oh=01_AdSwbwzADaX0H27QQRBL6bHXpR5hDXMbnXl421IDAhpcqQ&oe=63D6B753',
+  profile,
   alt = 'Profile pic',
   imgWidth = 250,
   id = 'profile',
@@ -25,6 +25,7 @@ export const Profile = ({
           src={profile}
           width={imgWidth}
           height={imgWidth}
+          loading="lazy"
         ></Image>
       </Styled.ProfilePic>
       <Heading>Mauro Chrisostimo</Heading>
