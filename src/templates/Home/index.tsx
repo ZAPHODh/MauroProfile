@@ -21,7 +21,7 @@ function Home({ course, profile, sliders }: IndexTypeProps) {
       <Styled.Wrapper>
         <Profile imgWidth={profile.imgWidth} profile={profile.profileData} />
         {isLoaded ? (
-          <Carousel>
+          <Carousel interval={10000}>
             {sliders.map((data) => (
               <CarouselItem
                 description={data.attributes.description}
