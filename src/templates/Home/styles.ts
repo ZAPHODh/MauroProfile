@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
     align-items: center ;
     justify-content: center; /* Alterei a propriedade justify-content para space-between */
     flex-wrap: nowrap; /* Adicionei a propriedade flex-wrap para quebrar a linha dos elementos quando necessário */
-    padding: 20px;
     flex-direction: column;
   `}
 `;

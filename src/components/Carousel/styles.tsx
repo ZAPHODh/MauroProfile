@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   color:${theme.colors.primaryColor};
   background-color: #1C1C1C;
   width: 100vw;
-  height: 600px;
+  height: 650px;
   margin: 0;
   padding: 5px;
   @media ${theme.media.lteMedium} {
@@ -33,7 +33,7 @@ align-items: center;
 export const CarouselContainer = styled.section`
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,15 +56,15 @@ justify-content: center;
 align-items: center;
 margin-top: 10px;
 position: absolute;
-bottom: 3.5rem;
-left: 1rem;
+bottom: 2rem;
+left: 0;
 `;
 
 export const NextAndPrevContainer = styled.div`
   ${({ theme }) => css`
   position: absolute;
-  bottom: 1.5rem;
-  right: 1rem;
+  bottom: 0;
+  right: 0;
   color:${theme.colors.primaryColor};
   `}
 `;

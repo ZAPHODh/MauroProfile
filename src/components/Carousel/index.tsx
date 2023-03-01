@@ -4,6 +4,7 @@ import { useSwipeable } from 'react-swipeable';
 
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { Tooltip } from '@mui/material';
 
 export type CarouselProps = {
   children: React.ReactNode[];
@@ -60,18 +61,22 @@ export const Carousel = ({
       }}
     >
       <Styled.NextAndPrevContainer>
-        <Styled.ArrowBTN
-          onClick={handlePrevClick}
-          aria-label="Troque para a prévia promoção"
-        >
-          <KeyboardArrowLeftIcon fontSize="inherit" />
-        </Styled.ArrowBTN>
-        <Styled.ArrowBTN
-          onClick={handleNextClick}
-          aria-label="Troque para a próxima promoção"
-        >
-          <KeyboardArrowRightIcon fontSize="inherit" />
-        </Styled.ArrowBTN>
+        <Tooltip title="Promoção anterior">
+          <Styled.ArrowBTN
+            onClick={handlePrevClick}
+            aria-label="Troque para a promoção prévia"
+          >
+            <KeyboardArrowLeftIcon fontSize="inherit" />
+          </Styled.ArrowBTN>
+        </Tooltip>
+        <Tooltip title="Próxima promoção">
+          <Styled.ArrowBTN
+            onClick={handleNextClick}
+            aria-label="Troque para a próxima promoção"
+          >
+            <KeyboardArrowRightIcon fontSize="inherit" />
+          </Styled.ArrowBTN>
+        </Tooltip>
       </Styled.NextAndPrevContainer>
       <Styled.Wrapper>
         <Styled.ProductContainer>
@@ -80,11 +85,12 @@ export const Carousel = ({
       </Styled.Wrapper>
       <Styled.IndicatorContainer>
         {children.map((child, index) => (
-          <Styled.Indicator
-            key={index}
-            active={index === currentSlide}
-            onClick={() => handleIndicatorClick(index)}
-          />
+          <Tooltip key={index} title="Selecione a promoção">
+            <Styled.Indicator
+              active={index === currentSlide}
+              onClick={() => handleIndicatorClick(index)}
+            />
+          </Tooltip>
         ))}
       </Styled.IndicatorContainer>
     </Styled.CarouselContainer>
