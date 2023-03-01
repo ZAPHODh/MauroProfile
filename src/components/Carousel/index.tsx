@@ -19,6 +19,7 @@ export const Carousel = ({
   id = 'Carousel',
 }: CarouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [shouldAutoPlay, setShouldAutoPlay] = useState(autoPlay);
   const slideCount = children.length;
 
   const handlePrevClick = () => {
@@ -29,11 +30,11 @@ export const Carousel = ({
     setCurrentSlide((currentSlide + 1) % slideCount);
   }, [currentSlide, slideCount]);
   useEffect(() => {
-    if (autoPlay) {
+    if (shouldAutoPlay) {
       const intervalId = setInterval(handleNextClick, interval);
       return () => clearInterval(intervalId);
     }
-  }, [handleNextClick, autoPlay, interval]);
+  }, [handleNextClick, shouldAutoPlay, interval]);
   const swipeableHandler = useSwipeable({
     onSwipedLeft: handleNextClick,
     onSwipedRight: handlePrevClick,
@@ -41,9 +42,23 @@ export const Carousel = ({
   const handleIndicatorClick = (index: number) => {
     setCurrentSlide(index);
   };
-
+  const handleMouseIn = () => {
+    setShouldAutoPlay(false);
+  };
+  const handleMouseOut = () => {
+    setShouldAutoPlay(true);
+  };
   return (
-    <Styled.CarouselContainer id={id} {...swipeableHandler}>
+    <Styled.CarouselContainer
+      id={id}
+      {...swipeableHandler}
+      onMouseEnter={() => {
+        handleMouseIn();
+      }}
+      onMouseLeave={() => {
+        handleMouseOut();
+      }}
+    >
       <Styled.NextAndPrevContainer>
         <Styled.ArrowBTN
           onClick={handlePrevClick}
