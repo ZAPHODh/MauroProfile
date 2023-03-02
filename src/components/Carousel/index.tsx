@@ -53,6 +53,9 @@ export const Carousel = ({
     <Styled.CarouselContainer
       id={id}
       {...swipeableHandler}
+      onFocus={() => {
+        handleMouseIn();
+      }}
       onMouseEnter={() => {
         handleMouseIn();
       }}
