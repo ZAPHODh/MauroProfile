@@ -1,9 +1,7 @@
 import { Button } from 'components/Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-
 import LogoutIcon from '@mui/icons-material/Logout';
-
 import { useSession, signOut } from 'next-auth/react';
 import * as Styled from './styles';
 import { Description } from 'components/Description';
@@ -25,6 +23,7 @@ export type ScheduleProps = {
   schedulers: SchedulerType[];
 };
 export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
+  const [response, setResponse] = useState(null);
   const { data: session } = useSession();
   const [errorMessage, setErrorMessage] = useState('');
   const [phoneNumber, setPhoneNumber] = useState<string>('');
@@ -33,6 +32,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
   const [isDateSelected, setIsDateSelected] = useState(false);
   const [avalibeHour, setAvalibeHour] = useState<Date[]>([]);
   const [dateSelected, setDateSelected] = useState<string>();
+
   const handleHourSelected = (date: Date) => {
     const dateInString = date.toISOString();
     setDateSelected(dateInString);
@@ -66,7 +66,6 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
       service: service,
       publish: new Date().toISOString(),
     };
-    console.log(variables);
     try {
       const res: Response = await request(
         process.env.NEXT_PUBLIC_GRAPHQL,
@@ -74,7 +73,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
         variables,
       );
       if (res) {
-        alert('Agendado com sucesso');
+        setResponse(res);
         setDateSelected('');
         setPhoneNumber('');
         setIsDateSelected(false);
@@ -89,6 +88,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
       }, 5000);
     }
   };
+
   const handleFormatPhone = () => {
     const cleaned = ('' + phoneNumber).replace(/\D/g, '');
     const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
@@ -97,6 +97,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
       setPhoneNumber('(' + match[1] + ') ' + match[2] + '-' + match[3]);
     }
   };
+
   const handleSelectedDate = (date: Date) => {
     date;
     const avalibeHour = [];
@@ -139,6 +140,13 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
     setAvalibeHour(avalibeHour);
     setIsDateSelected(true);
   };
+  useEffect(() => {
+    if (response) {
+      // do something with the response
+      alert('Agendado com sucesso');
+    }
+  }, [response]);
+
   return (
     <Styled.Wrapper>
       <Button onClick={handleClick}>
