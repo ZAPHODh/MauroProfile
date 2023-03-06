@@ -15,6 +15,7 @@
     "lint-staged": "lint-staged",
     "type-check": "tsc --noEmit",
     "full-lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix --max-warnings=0",
+    "prepare": "husky install",
     "postinstall": "npm run prepare"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "vite-plugin-react": "^4.0.1"
   },
   "devDependencies": {
+    "husky": "latest",
     "@babel/core": "latest",
     "@babel/eslint-parser": "latest",
     "@babel/preset-env": "latest",
