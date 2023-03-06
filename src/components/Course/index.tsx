@@ -19,7 +19,7 @@ export const Course = ({
   finalConsider = 'No momento, o curso ja está com a lotação maxima',
   id = 'Course',
 }: CourseProps) => {
-  const courseRef = useRef<HTMLDivElement>();
+  const courseRef = useRef<HTMLDivElement>(null);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export const Course = ({
 
   return (
     <Styled.Wrapper id={id}>
-      <Button onClick={handleClick}>
+      <Button onClick={handleClick} id="course-button">
         Curso
         {show ? (
           <ArrowDropUpIcon fontSize="inherit" />

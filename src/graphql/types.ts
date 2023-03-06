@@ -50,3 +50,19 @@ export type CourseGraphType = {
     };
   };
 };
+
+export type SchedulerType = {
+  attributes: {
+    Date: string;
+    Name: string;
+    Email: string;
+    SmartphoneNumber: string;
+    Service: string;
+  };
+};
+
+export type SchedulersType = {
+  schedulers: {
+    data: SchedulerType[];
+  };
+};

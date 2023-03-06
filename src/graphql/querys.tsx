@@ -48,3 +48,18 @@ export const GET_COURSE = gql`
   }
 }
 `;
+export const GET_SCHEDULER = gql`
+query GET_SCHEDULER{
+  schedulers{
+    data{
+      attributes{
+        Date
+        Name
+        Email
+        SmartphoneNumber
+        Service
+      }
+    }
+  }
+}
+`;

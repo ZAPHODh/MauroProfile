@@ -8,7 +8,7 @@ import { Course } from 'components/Course';
 import React, { useEffect, useState } from 'react';
 import { IndexTypeProps } from 'pages';
 import Head from 'next/head';
-function Home({ course, profile, sliders }: IndexTypeProps) {
+function Home({ course, profile, sliders, schedulers }: IndexTypeProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setIsLoaded(true);
@@ -36,7 +36,7 @@ function Home({ course, profile, sliders }: IndexTypeProps) {
             ))}
           </Carousel>
         ) : null}
-        <Schedule />
+        <Schedule schedulers={schedulers} />
         <Course
           course={course.course}
           description={course.description}
