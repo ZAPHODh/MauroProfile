@@ -42,49 +42,49 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // if (!session) {
-    //   setErrorMessage('Você não está logado');
-    //   setTimeout(() => {
-    //     setErrorMessage('');
-    //   }, 5000);
-    //   return;
-    // }
-    // if (!phoneNumber || !service || !dateSelected) {
-    //   setErrorMessage('Você não preencheu todos os campos');
-    //   setTimeout(() => {
-    //     setErrorMessage('');
-    //   }, 5000);
-    //   return;
-    // }
-    // const variables = {
-    //   date: dateSelected,
-    //   name: session.user.name,
-    //   email: session.user.email,
-    //   smartphoneNumber: phoneNumber,
-    //   service: service,
-    //   publish: new Date().toISOString(),
-    // };
-    // try {
-    //   const res = await request(
-    //     process.env.NEXT_PUBLIC_GRAPHQL,
-    //     NEW_SCHEDULER,
-    //     variables,
-    //   );
-    //   if (res) {
-    //     alert('Agendado com sucesso');
-    //     setDateSelected('');
-    //     setPhoneNumber('');
-    //     setIsDateSelected(false);
-    //   }
-    // } catch (error) {
-    //   console.log(error.message);
-    //   setErrorMessage(
-    //     'Houve um erro fazer o agendamento. Cheque se as informações estão corretas',
-    //   );
-    //   setTimeout(() => {
-    //     setErrorMessage('');
-    //   }, 5000);
-    // }
+    if (!session) {
+      setErrorMessage('Você não está logado');
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5000);
+      return;
+    }
+    if (!phoneNumber || !service || !dateSelected) {
+      setErrorMessage('Você não preencheu todos os campos');
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5000);
+      return;
+    }
+    const variables = {
+      date: dateSelected,
+      name: session.user.name,
+      email: session.user.email,
+      smartphoneNumber: phoneNumber,
+      service: service,
+      publish: new Date().toISOString(),
+    };
+    try {
+      const res = await request(
+        process.env.NEXT_PUBLIC_GRAPHQL,
+        NEW_SCHEDULER,
+        variables,
+      );
+      if (res) {
+        alert('Agendado com sucesso');
+        setDateSelected('');
+        setPhoneNumber('');
+        setIsDateSelected(false);
+      }
+    } catch (error) {
+      console.log(error.message);
+      setErrorMessage(
+        'Houve um erro fazer o agendamento. Cheque se as informações estão corretas',
+      );
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5000);
+    }
   };
 
   const handleFormatPhone = () => {
