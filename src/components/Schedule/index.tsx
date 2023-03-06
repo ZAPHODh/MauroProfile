@@ -1,5 +1,5 @@
 import { Button } from 'components/Button';
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useSession, signOut } from 'next-auth/react';
@@ -23,7 +23,6 @@ export type ScheduleProps = {
   schedulers: SchedulerType[];
 };
 export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
-  const [response, setResponse] = useState(null);
   const { data: session } = useSession();
   const [errorMessage, setErrorMessage] = useState('');
   const [phoneNumber, setPhoneNumber] = useState<string>('');
@@ -42,52 +41,55 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
     setShow((visible) => !visible);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!session) {
-      setErrorMessage('Você não está logado');
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 5000);
-      return;
-    }
-    if (!phoneNumber || !service || !dateSelected) {
-      setErrorMessage('Você não preencheu todos os campos');
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 5000);
-      return;
-    }
-    const variables = {
-      date: dateSelected,
-      name: session.user.name,
-      email: session.user.email,
-      smartphoneNumber: phoneNumber,
-      service: service,
-      publish: new Date().toISOString(),
-    };
-    try {
-      const res: Response = await request(
-        process.env.NEXT_PUBLIC_GRAPHQL,
-        NEW_SCHEDULER,
-        variables,
-      );
-      if (res) {
-        setResponse(res);
-        setDateSelected('');
-        setPhoneNumber('');
-        setIsDateSelected(false);
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!session) {
+        setErrorMessage('Você não está logado');
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+        return;
       }
-    } catch (error) {
-      console.log(error.message);
-      setErrorMessage(
-        'Houve um erro fazer o agendamento. Cheque se as informações estão corretas',
-      );
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 5000);
-    }
-  };
+      if (!phoneNumber || !service || !dateSelected) {
+        setErrorMessage('Você não preencheu todos os campos');
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+        return;
+      }
+      const variables = {
+        date: dateSelected,
+        name: session.user.name,
+        email: session.user.email,
+        smartphoneNumber: phoneNumber,
+        service: service,
+        publish: new Date().toISOString(),
+      };
+      try {
+        const res: Response = await request(
+          process.env.NEXT_PUBLIC_GRAPHQL,
+          NEW_SCHEDULER,
+          variables,
+        );
+        if (res) {
+          alert('Agendado com sucesso');
+          setDateSelected('');
+          setPhoneNumber('');
+          setIsDateSelected(false);
+        }
+      } catch (error) {
+        console.log(error.message);
+        setErrorMessage(
+          'Houve um erro fazer o agendamento. Cheque se as informações estão corretas',
+        );
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+      }
+    },
+    [session, phoneNumber, service, dateSelected],
+  );
 
   const handleFormatPhone = () => {
     const cleaned = ('' + phoneNumber).replace(/\D/g, '');
@@ -140,12 +142,6 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
     setAvalibeHour(avalibeHour);
     setIsDateSelected(true);
   };
-  useEffect(() => {
-    if (response) {
-      // do something with the response
-      alert('Agendado com sucesso');
-    }
-  }, [response]);
 
   return (
     <Styled.Wrapper>
