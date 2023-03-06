@@ -14,9 +14,7 @@
     "deploy-static": "npm run build && npm run export",
     "lint-staged": "lint-staged",
     "type-check": "tsc --noEmit",
-    "full-lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix --max-warnings=0",
-    "prepare": "husky install",
-    "postinstall": "npm run prepare"
+    "full-lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix --max-warnings=0"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -44,7 +42,6 @@
     "vite-plugin-react": "^4.0.1"
   },
   "devDependencies": {
-    "husky": "latest",
     "@babel/core": "latest",
     "@babel/eslint-parser": "latest",
     "@babel/preset-env": "latest",
