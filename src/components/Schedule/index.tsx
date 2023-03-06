@@ -17,7 +17,6 @@ import { SchedulerType } from 'graphql/types';
 import { HoursContainer } from 'components/HoursContainer';
 import request from 'graphql-request';
 import { NEW_SCHEDULER } from 'graphql/mutations';
-import { Response } from 'graphql-request/dist/types.dom';
 
 export type ScheduleProps = {
   schedulers: SchedulerType[];
@@ -67,7 +66,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
         publish: new Date().toISOString(),
       };
       try {
-        const res: Response = await request(
+        const res = await request(
           process.env.NEXT_PUBLIC_GRAPHQL,
           NEW_SCHEDULER,
           variables,
