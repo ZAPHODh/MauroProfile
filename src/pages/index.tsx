@@ -40,24 +40,14 @@ export default function Index({
   profile,
   schedulers,
 }: IndexTypeProps) {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsClient(true);
-    }
-  }, []);
-
   return (
     <>
-      {isClient && (
-        <Home
-          sliders={sliders}
-          course={course}
-          profile={profile}
-          schedulers={schedulers}
-        />
-      )}
+      <Home
+        sliders={sliders}
+        course={course}
+        profile={profile}
+        schedulers={schedulers}
+      />
     </>
   );
 }
