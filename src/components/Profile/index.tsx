@@ -25,7 +25,7 @@ export const Profile = ({
           src={profile}
           width={imgWidth}
           height={imgWidth}
-          loading="lazy"
+          priority
         ></Image>
       </Styled.ProfilePic>
       <Heading>Mauro Chrisostimo</Heading>

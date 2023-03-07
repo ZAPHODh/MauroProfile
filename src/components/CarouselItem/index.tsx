@@ -32,7 +32,7 @@ export const CarouselItem = ({
           alt={`${title} pic`}
           height="320"
           width={280}
-          loading="lazy"
+          priority
         />
       </Styled.OfferImage>
       <Description
