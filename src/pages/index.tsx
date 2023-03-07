@@ -31,15 +31,15 @@ export type IndexTypeProps = {
   sliders: SliderType[];
   course: courseProp;
   profile: profileProp;
-  schedulers: SchedulerType[];
+  // schedulers: SchedulerType[];
 };
 
 export default function Index({
   sliders,
   course,
   profile,
-  schedulers,
-}: IndexTypeProps) {
+}: // schedulers,
+IndexTypeProps) {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function Index({
           sliders={sliders}
           course={course}
           profile={profile}
-          schedulers={schedulers}
+          // schedulers={schedulers}
         />
       )}
     </>
@@ -61,10 +61,10 @@ export default function Index({
 }
 
 export const getStaticProps = async () => {
-  const schedulersRaw: SchedulersType = await request(
-    process.env.NEXT_PUBLIC_GRAPHQL,
-    GET_SCHEDULER,
-  );
+  // const schedulersRaw: SchedulersType = await request(
+  //   process.env.NEXT_PUBLIC_GRAPHQL,
+  //   GET_SCHEDULER,
+  // );
   const slidersRaw: SlidersGraphType = await request(
     process.env.NEXT_PUBLIC_GRAPHQL,
     GET_SLIDERS,
@@ -83,8 +83,8 @@ export const getStaticProps = async () => {
   const profile = { profileData, imgWidth };
   const sliders = slidersRaw.sliders.data;
   const course = courseRaw.curso.data.attributes;
-  const schedulers = schedulersRaw.schedulers.data;
+  // const schedulers = schedulersRaw.schedulers.data;
   return {
-    props: { sliders, course, profile, schedulers },
+    props: { sliders, course, profile },
   };
 };
