@@ -14,6 +14,8 @@ import {
   SlidersGraphType,
   SliderType,
 } from 'graphql/types';
+import { useEffect, useState } from 'react';
+
 export type courseProp = {
   course: string;
   description: string;
@@ -38,13 +40,23 @@ export default function Index({
   profile,
   schedulers,
 }: IndexTypeProps) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
-    <Home
-      sliders={sliders}
-      course={course}
-      profile={profile}
-      schedulers={schedulers}
-    />
+    <>
+      {isClient && (
+        <Home
+          sliders={sliders}
+          course={course}
+          profile={profile}
+          schedulers={schedulers}
+        />
+      )}
+    </>
   );
 }
 
