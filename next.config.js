@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ['logodownload.org', 'source.unsplash.com', 'res.cloudinary.com'],
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
   compiler: {
     styledComponents: true,
