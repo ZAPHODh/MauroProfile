@@ -48,7 +48,7 @@ export default function Index({
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const schedulersRaw: SchedulersType = await request(
     process.env.NEXT_PUBLIC_GRAPHQL,
     GET_SCHEDULER,
