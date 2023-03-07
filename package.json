@@ -12,6 +12,7 @@
     "test": "vitest",
     "export": "next export",
     "deploy-static": "npm run build && npm run export",
+    "deploy-ssr":"npm run build && npm start",
     "lint-staged": "lint-staged",
     "type-check": "tsc --noEmit",
     "full-lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix --max-warnings=0"
