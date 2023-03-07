@@ -64,19 +64,19 @@ export default function Index({
 
 export const getStaticProps = async () => {
   const schedulersRaw: SchedulersType = await request(
-    process.env.NEXT_PUBLIC_GRAPHQL,
+    'https://mcserver-strapi.herokuapp.com/graphql',
     GET_SCHEDULER,
   );
   const slidersRaw: SlidersGraphType = await request(
-    process.env.NEXT_PUBLIC_GRAPHQL,
+    'https://mcserver-strapi.herokuapp.com/graphql',
     GET_SLIDERS,
   );
   const courseRaw: CourseGraphType = await request(
-    process.env.NEXT_PUBLIC_GRAPHQL,
+    'https://mcserver-strapi.herokuapp.com/graphql',
     GET_COURSE,
   );
   const profileRaw: ProfileGraphType = await request(
-    process.env.NEXT_PUBLIC_GRAPHQL,
+    'https://mcserver-strapi.herokuapp.com/graphql',
     GET_PROFILE,
   );
   //map data
