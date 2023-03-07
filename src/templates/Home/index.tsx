@@ -36,7 +36,7 @@ function Home({ course, profile, sliders, schedulers }: IndexTypeProps) {
             ))}
           </Carousel>
         ) : null}
-        {/* <Schedule schedulers={schedulers} /> */}
+        <Schedule schedulers={schedulers} />
         <Course
           course={course.course}
           description={course.description}

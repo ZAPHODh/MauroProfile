@@ -1,5 +1,6 @@
 import Home from 'templates/Home';
 import request from 'graphql-request';
+import { useEffect, useState } from 'react';
 import {
   GET_COURSE,
   GET_PROFILE,
@@ -14,7 +15,6 @@ import {
   SlidersGraphType,
   SliderType,
 } from 'graphql/types';
-import { useEffect, useState } from 'react';
 
 export type courseProp = {
   course: string;
@@ -43,7 +43,9 @@ export default function Index({
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
   }, []);
 
   return (
@@ -77,14 +79,15 @@ export const getStaticProps = async () => {
     process.env.NEXT_PUBLIC_GRAPHQL,
     GET_PROFILE,
   );
+  //map data
   const imgWidth = Number(profileRaw.perfil.data.attributes.imgWidth);
   const profileData =
     profileRaw.perfil.data.attributes.profile.data.attributes.url;
   const profile = { profileData, imgWidth };
   const sliders = slidersRaw.sliders.data;
   const course = courseRaw.curso.data.attributes;
-  // const schedulers = schedulersRaw.schedulers.data;
+  const schedulers = schedulersRaw.schedulers.data;
   return {
-    props: { sliders, course, profile },
+    props: { sliders, course, profile, schedulers },
   };
 };

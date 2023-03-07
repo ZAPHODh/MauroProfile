@@ -36,7 +36,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
     setDateSelected(dateInString);
   };
 
-  const handleClick = () => {
+  const handleVisible = () => {
     setShow((visible) => !visible);
   };
 
@@ -141,7 +141,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
 
   return (
     <Styled.Wrapper>
-      <Button onClick={handleClick}>
+      <Button onClick={handleVisible}>
         Agendar
         <CalendarMonthIcon fontSize="inherit" />
       </Button>
