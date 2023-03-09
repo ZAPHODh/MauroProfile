@@ -10,7 +10,6 @@ export const LoginButtons = () => {
       <Tooltip title="Logar com o Google" placement="left">
         <Styled.Login
           onClick={() => {
-            console.log(process.env.NEXTAUTH_URL);
             signIn('google');
           }}
         >
