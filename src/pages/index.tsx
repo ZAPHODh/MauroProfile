@@ -1,6 +1,5 @@
 import Home from 'templates/Home';
 import request from 'graphql-request';
-import { useEffect, useState } from 'react';
 import {
   GET_COURSE,
   GET_PROFILE,
