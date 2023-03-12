@@ -13,7 +13,7 @@ export const Wrapper = styled.table`
   `}
 `;
 export const Th = styled.th`
-  /* border: 1px solid #1C1C1C; */
+  font-size: 13px;
   text-align: left;
   padding: 8px;
   background-color: #FFB606;

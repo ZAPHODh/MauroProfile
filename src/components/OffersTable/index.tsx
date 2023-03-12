@@ -7,21 +7,28 @@ export type OffersTableProps = {
 };
 
 export const OffersTable = ({ Offers = [] }: OffersTableProps) => {
+  console.log(Offers);
   return (
     <>
       <Heading as="h3">Outras promoçoes</Heading>
       <Styled.Wrapper>
-        <Styled.Th>Promoção</Styled.Th>
-        <Styled.Th>Descrição</Styled.Th>
-        <Styled.Th>Valor</Styled.Th>
-        {Offers.map((offer) => (
-          <OfferTab
-            key={Math.random()}
-            firstArgument={offer.firstArgument}
-            secondArgument={offer.secondArgument}
-            thirdArgument={offer.thirdArgument}
-          ></OfferTab>
-        ))}
+        <thead>
+          <tr>
+            <Styled.Th>Promoção</Styled.Th>
+            <Styled.Th>Descrição</Styled.Th>
+            <Styled.Th>Valor</Styled.Th>
+          </tr>
+        </thead>
+        <tbody>
+          {Offers.map((offer) => (
+            <OfferTab
+              key={Math.random()}
+              firstArgument={offer.firstArgument}
+              secondArgument={offer.secondArgument}
+              thirdArgument={offer.thirdArgument}
+            ></OfferTab>
+          ))}
+        </tbody>
       </Styled.Wrapper>
     </>
   );

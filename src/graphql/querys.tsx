@@ -69,9 +69,9 @@ query GET_OFFER{
   offers{
     data{
       attributes{
-        title:Titulo
-        description:Descricao
-        value:Valor
+        firstArgument:Titulo
+        secondArgument:Descricao
+        thirdArgument:Valor
       }
     }
   }

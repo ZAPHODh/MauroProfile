@@ -23,7 +23,7 @@ export const Login = styled.button`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 5px;
   &:hover{
-    cursor: not-allowed;
+    cursor: pointer;
     pointer-events: all !important;
     background-color: rgba(0,0,0,0.1);
   }
