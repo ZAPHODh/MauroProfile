@@ -3,6 +3,7 @@ import * as Styled from './styles';
 import { CountDown } from 'components/CountDown';
 import Image from 'next/image';
 import { Description } from 'components/Description';
+
 export type CarouselItemProps = {
   title?: string;
   subtitle?: string;

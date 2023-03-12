@@ -8,7 +8,9 @@ import { Course } from 'components/Course';
 import React, { useEffect, useState } from 'react';
 import { IndexTypeProps } from 'pages';
 import Head from 'next/head';
-function Home({ course, profile, sliders, schedulers }: IndexTypeProps) {
+import { OffersTable } from 'components/OffersTable';
+
+function Home({ course, profile, sliders, schedulers, offer }: IndexTypeProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setIsLoaded(true);
@@ -21,21 +23,25 @@ function Home({ course, profile, sliders, schedulers }: IndexTypeProps) {
       <Styled.Wrapper>
         <Profile imgWidth={profile.imgWidth} profile={profile.profileData} />
         {isLoaded ? (
-          <Carousel interval={10000}>
-            {sliders.map((data) => (
-              <CarouselItem
-                description={data.attributes.description}
-                bottomMessage={data.attributes.bottomMessage}
-                endDateToCalc={data.attributes.endDateToCalc}
-                endMessage={data.attributes.endMessage}
-                img={data.attributes.img.data.attributes.url}
-                subtitle={data.attributes.subtitle}
-                title={data.attributes.title}
-                key={Math.random()}
-              />
-            ))}
-          </Carousel>
+          <>
+            <Carousel interval={10000}>
+              {sliders.map((data) => (
+                <CarouselItem
+                  description={data.attributes.description}
+                  bottomMessage={data.attributes.bottomMessage}
+                  endDateToCalc={data.attributes.endDateToCalc}
+                  endMessage={data.attributes.endMessage}
+                  img={data.attributes.img.data.attributes.url}
+                  subtitle={data.attributes.subtitle}
+                  title={data.attributes.title}
+                  key={Math.random()}
+                />
+              ))}
+            </Carousel>
+            <OffersTable Offers={offer}></OffersTable>
+          </>
         ) : null}
+
         <Schedule schedulers={schedulers} />
         <Course
           course={course.course}

@@ -63,3 +63,17 @@ query GET_SCHEDULER{
   }
 }
 `;
+
+export const GET_OFFER = gql`
+query GET_OFFER{
+  offers{
+    data{
+      attributes{
+        title:Titulo
+        description:Descricao
+        value:Valor
+      }
+    }
+  }
+}
+`;

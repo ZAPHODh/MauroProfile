@@ -66,3 +66,16 @@ export type SchedulersType = {
     data: SchedulerType[];
   };
 };
+
+export type OfferType = {
+  attributes: {
+    firstArgument: string;
+    secondArgument: string;
+    thirdArgument: string;
+  };
+};
+export type OffersType = {
+  offers: {
+    data: OfferType[];
+  };
+};
