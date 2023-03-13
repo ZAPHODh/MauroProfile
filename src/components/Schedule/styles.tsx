@@ -91,7 +91,7 @@ export const Send = styled.button`
   `}
 `;
 
-export const Polices = styled.link`
+export const Polices = styled.a`
   font-size: 13px;
   text-decoration: underline;
   color: white;
