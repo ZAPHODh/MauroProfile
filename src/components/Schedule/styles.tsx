@@ -91,6 +91,20 @@ export const Send = styled.button`
   `}
 `;
 
+export const Polices = styled.link`
+  font-size: 13px;
+  text-decoration: underline;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  &:hover{
+    cursor: pointer;
+  }
+`;
+
 export const ScheduleContainer = styled.div<{
   visible: boolean;
   session: boolean;

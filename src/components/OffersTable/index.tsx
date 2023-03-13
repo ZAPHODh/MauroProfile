@@ -7,7 +7,6 @@ export type OffersTableProps = {
 };
 
 export const OffersTable = ({ Offers = [] }: OffersTableProps) => {
-  console.log(Offers);
   return (
     <>
       <Heading as="h3">Outras promoçoes</Heading>

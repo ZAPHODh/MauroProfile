@@ -77,7 +77,6 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
         setIsDateSelected(false);
       }
     } catch (error) {
-      console.log(error.message);
       setErrorMessage(
         'Houve um erro fazer o agendamento. Cheque se as informações estão corretas',
       );
@@ -231,6 +230,9 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
                 {errorMessage && (
                   <Styled.errorMessage>{errorMessage}</Styled.errorMessage>
                 )}
+                <Styled.Polices href="../pages/api/polices">
+                  Politicas de privacidade
+                </Styled.Polices>
               </Form>
             </>
           ) : (
