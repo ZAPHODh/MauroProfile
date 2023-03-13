@@ -11,7 +11,6 @@ export const OfferTab = ({
   secondArgument,
   thirdArgument,
 }: OfferTabProps) => {
-  console.log(firstArgument, secondArgument, thirdArgument);
   return (
     <Styled.Wrapper>
       <Styled.Td>{firstArgument}</Styled.Td>

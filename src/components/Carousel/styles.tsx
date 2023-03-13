@@ -51,6 +51,7 @@ ${({ theme, active }) => css`width: 10px;
 `}`;
 
 export const IndicatorContainer = styled.div`
+${() => css`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -58,14 +59,17 @@ margin-top: 10px;
 position: absolute;
 bottom: 2rem;
 left: 0;
+`}
 `;
 
 export const NextAndPrevContainer = styled.div`
   ${({ theme }) => css`
   position: absolute;
   bottom: 0;
-  right: 0;
   color:${theme.colors.primaryColor};
+  bottom: 0;
+  right: 0;
+
   `}
 `;
 
