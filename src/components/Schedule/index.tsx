@@ -230,7 +230,7 @@ export const Schedule = ({ schedulers = [] }: ScheduleProps) => {
                 {errorMessage && (
                   <Styled.errorMessage>{errorMessage}</Styled.errorMessage>
                 )}
-                <Styled.Polices href="../pages/api/polices">
+                <Styled.Polices href="https://maurochrisostimo.com.br/api/polices">
                   Politicas de privacidade
                 </Styled.Polices>
               </Form>
