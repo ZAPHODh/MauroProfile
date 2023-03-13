@@ -2,7 +2,7 @@ import { Tooltip } from '@mui/material';
 import { signIn } from 'next-auth/react';
 import * as Styled from './styles';
 import GoogleIcon from '@mui/icons-material/Google';
-import InstagramIcon from '@mui/icons-material/Instagram';
+// import InstagramIcon from '@mui/icons-material/Instagram';
 
 export const LoginButtons = () => {
   return (
@@ -16,7 +16,7 @@ export const LoginButtons = () => {
           <GoogleIcon fontSize="inherit" />
         </Styled.Login>
       </Tooltip>
-      <Tooltip title="Logar com o Instagram" placement="right">
+      {/* <Tooltip title="Logar com o Instagram" placement="right">
         <Styled.Login
           onClick={() => {
             signIn('instagram');
@@ -24,7 +24,7 @@ export const LoginButtons = () => {
         >
           <InstagramIcon fontSize="inherit" />
         </Styled.Login>
-      </Tooltip>
+      </Tooltip> */}
     </Styled.Wrapper>
   );
 };
