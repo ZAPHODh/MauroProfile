@@ -51,7 +51,7 @@ export const Course = ({
           <br />
           {finalConsider}
         </Description>
-        <Styled.KnowMore href="https://api.whatsapp.com/send?phone=5521971083900&text=Olá,%20gostaria%20de%20saber%20mais%sobre%20o%20curso">
+        <Styled.KnowMore href="https://api.whatsapp.com/send?phone=5521971083900&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20curso">
           <KeyboardArrowRightIcon fontSize="inherit" />
           Saiba Mais
         </Styled.KnowMore>
