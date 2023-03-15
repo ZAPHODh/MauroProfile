@@ -11,7 +11,7 @@ export const OfferImage = styled.div`
 export const EndDate = styled.p`
   color:#FFB606;
   font-size: 30px;
-  font-family:  Arial, Helvetica, sans-serif;
+  font-family:  'Montserrat', sans-serif;
   margin: 5px;
 `;
 export const SubTitle = styled.p`
