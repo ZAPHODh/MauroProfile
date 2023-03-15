@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import Link from 'next/link';
 export const Wrapper = styled.section`
   ${() => css`
   display: flex;
@@ -29,7 +29,7 @@ export const CourseContent = styled.div<{ show: boolean }>`
   }
 `}
 `;
-export const KnowMore = styled.a`
+export const KnowMore = styled(Link)`
   ${() => css`
   padding: 10px;
   width: 100%;

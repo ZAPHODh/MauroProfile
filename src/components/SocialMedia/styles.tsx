@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import A from 'next/link';
 export const Wrapper = styled.div`
   ${() => css`
   display: flex;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const Link = styled.a`
+export const Link = styled(A)`
   ${() => css`
   font-size: 45px;
   padding: 2px;
