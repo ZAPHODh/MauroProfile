@@ -88,7 +88,7 @@ export const Carousel = ({
       </Styled.Wrapper>
       <Styled.IndicatorContainer>
         {children.map((child, index) => (
-          <Tooltip title={`Selecione a Promoção ${index}`} key={index}>
+          <Tooltip title={`Selecione a Promoção ${index + 1}`} key={index}>
             <Styled.Indicator
               active={index === currentSlide}
               onClick={() => handleIndicatorClick(index)}
