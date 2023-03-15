@@ -24,7 +24,6 @@
     "@styled-icons/material-outlined": "latest",
     "graphql": "^16.6.0",
     "graphql-request": "^5.2.0",
-    "leaflet": "^1.9.3",
     "moment": "^2.29.4",
     "next": "^13.2.3",
     "next-auth": "^4.20.1",
@@ -36,8 +35,6 @@
     "react-leaflet": "^4.2.1",
     "react-markdown": "latest",
     "react-swipeable": "^7.0.0",
-    "remove": "^0.1.5",
-    "sharp": "^0.31.3",
     "storybook-addon-next": "^1.7.3",
     "styled-components": "^5.3.8",
     "vite-plugin-react": "^4.0.1"
