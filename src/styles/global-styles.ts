@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
-    font-family: ${({ theme }) => theme.font.family.default};
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #1C1C1C;
   }
 
