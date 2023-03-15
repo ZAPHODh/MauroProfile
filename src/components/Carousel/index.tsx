@@ -88,11 +88,12 @@ export const Carousel = ({
       </Styled.Wrapper>
       <Styled.IndicatorContainer>
         {children.map((child, index) => (
-          <Styled.Indicator
-            key={index}
-            active={index === currentSlide}
-            onClick={() => handleIndicatorClick(index)}
-          />
+          <Tooltip title={`Selecione a Promoção ${index}`} key={index}>
+            <Styled.Indicator
+              active={index === currentSlide}
+              onClick={() => handleIndicatorClick(index)}
+            />
+          </Tooltip>
         ))}
       </Styled.IndicatorContainer>
     </Styled.CarouselContainer>
