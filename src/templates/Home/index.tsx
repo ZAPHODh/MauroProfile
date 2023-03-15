@@ -50,7 +50,6 @@ function Home({ course, profile, sliders, schedulers, offer }: IndexTypeProps) {
       </>
     );
   }
-  return <p>loading...</p>;
 }
 
 export default Home;
