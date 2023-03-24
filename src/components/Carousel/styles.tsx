@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   color:${theme.colors.primaryColor};
+  /* flex-direction: colu */
   background-color: #1C1C1C;
   width: 100vw;
   height: 650px;
@@ -55,21 +56,19 @@ ${() => css`
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top: 10px;
-position: absolute;
-bottom: 2rem;
-left: 0;
+margin-bottom:7px ;
 `}
 `;
 
-export const NextAndPrevContainer = styled.div`
+export const ManageContainer = styled.div`
   ${({ theme }) => css`
   position: absolute;
   bottom: 0;
   color:${theme.colors.primaryColor};
   bottom: 0;
-  right: 0;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   `}
 `;
 

@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #1C1C1C;
   }

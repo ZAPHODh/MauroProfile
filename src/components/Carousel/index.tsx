@@ -63,38 +63,32 @@ export const Carousel = ({
         handleMouseOut();
       }}
     >
-      <Styled.NextAndPrevContainer>
-        <Tooltip title="Promoção anterior">
-          <Styled.ArrowBTN
-            onClick={handlePrevClick}
-            aria-label="Troque para a promoção prévia"
-          >
-            <KeyboardArrowLeftIcon fontSize="inherit" />
-          </Styled.ArrowBTN>
-        </Tooltip>
-        <Tooltip title="Próxima promoção">
-          <Styled.ArrowBTN
-            onClick={handleNextClick}
-            aria-label="Troque para a próxima promoção"
-          >
-            <KeyboardArrowRightIcon fontSize="inherit" />
-          </Styled.ArrowBTN>
-        </Tooltip>
-      </Styled.NextAndPrevContainer>
       <Styled.Wrapper>
         <Styled.ProductContainer>
           {children[currentSlide]}
         </Styled.ProductContainer>
       </Styled.Wrapper>
-      <Styled.IndicatorContainer>
-        {children.map((child, index) => (
-          <Styled.Indicator
-            key={index}
-            active={index === currentSlide}
-            onClick={() => handleIndicatorClick(index)}
-          />
-        ))}
-      </Styled.IndicatorContainer>
+      <Styled.ManageContainer>
+        <Tooltip title="Promoção anterior">
+          <Styled.ArrowBTN onClick={handlePrevClick}>
+            <KeyboardArrowLeftIcon fontSize="inherit" />
+          </Styled.ArrowBTN>
+        </Tooltip>
+        <Styled.IndicatorContainer>
+          {children.map((child, index) => (
+            <Styled.Indicator
+              key={index}
+              active={index === currentSlide}
+              onClick={() => handleIndicatorClick(index)}
+            />
+          ))}
+        </Styled.IndicatorContainer>
+        <Tooltip title="Próxima promoção">
+          <Styled.ArrowBTN onClick={handleNextClick}>
+            <KeyboardArrowRightIcon fontSize="inherit" />
+          </Styled.ArrowBTN>
+        </Tooltip>
+      </Styled.ManageContainer>
     </Styled.CarouselContainer>
   );
 };
