@@ -47,7 +47,7 @@ export const CalendarComponent = ({
       day == 1 ||
       (holidays.length > 0 &&
         holidays.some((holiday) => holiday.getTime() === date.getTime()))
-    ); // Disable Sunday (0) and Monday (1) and holidays
+    );
   };
 
   return (
