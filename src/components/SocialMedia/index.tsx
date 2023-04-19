@@ -22,9 +22,8 @@ export const SocialMedia = ({
   socialMedia = [
     {
       socialMedia: 'Instagram',
-      appLink:
-        'instagram://instagram.com/maurochrisostimo_?igshid=Yzg5MTU1MDY=',
-      webLink: 'https://instagram.com/maurochrisostimo_?igshid=Yzg5MTU1MDY=',
+      appLink: 'instagram://instagram.com/maurochrisostim0?igshid=YmMyMTA2M2Y=',
+      webLink: 'https://instagram.com/maurochrisostim0?igshid=YmMyMTA2M2Y=',
     },
     {
       socialMedia: 'Facebook',
