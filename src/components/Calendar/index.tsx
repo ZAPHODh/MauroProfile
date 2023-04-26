@@ -4,10 +4,11 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useEffect, useRef, useState } from 'react';
 import { Tooltip } from '@mui/material';
+type Value = Date | Date[];
 export type CalendarComponentProps = {
   maxMonth: number;
   holidays?: Date[];
-  handleSelectedDate: (date: Date) => void;
+  handleSelectedDate: (date: Value) => void;
 };
 
 export const CalendarComponent = ({
@@ -15,7 +16,7 @@ export const CalendarComponent = ({
   holidays = [],
   handleSelectedDate,
 }: CalendarComponentProps) => {
-  const [value, onChange] = useState(new Date());
+  const [value, onChange] = useState<Value>(new Date());
   const [calendarVisible, setCalendarVisible] = useState(false);
   const today = new Date();
   const maxDate = new Date(today.getFullYear(), today.getMonth() + maxMonth, 0);
