@@ -67,7 +67,7 @@ export const CalendarComponent = ({
         <Calendar
           value={value}
           onChange={onChange}
-          onClickDay={(date) => {
+          onClickDay={(date: Date) => {
             setCalendarVisible(false);
             return handleSelectedDate(date);
           }}
