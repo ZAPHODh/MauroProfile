@@ -40,6 +40,7 @@ export const CalendarComponent = ({
   const handleIconClick = () => {
     setCalendarVisible((visible) => !visible);
   };
+
   const disabledDays = (date: Date) => {
     const day = date.getDay();
     return (
