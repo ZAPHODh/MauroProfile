@@ -66,8 +66,10 @@ export const CalendarComponent = ({
       </Tooltip>
       <Styled.CalendarContainer visible={calendarVisible} ref={calendarRef}>
         <Calendar
-          value={value}
-          onChange={onChange}
+          value={value[0]}
+          onChange={(date) => {
+            onChange([date]);
+          }}
           onClickDay={(date: Date) => {
             setCalendarVisible(false);
             return handleSelectedDate(date);
